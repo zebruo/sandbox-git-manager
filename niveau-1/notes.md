@@ -26,3 +26,11 @@ La zone de staging (index) est une étape intermédiaire entre le dossier de tra
 ## Exercice en cours
 Je modifie ce fichier pour observer le statut M (Modified) dans git-manager.
 
+## Diff visuel
+Un diff montre les différences entre deux versions d'un fichier.
+- Ligne en rouge avec `-` : ligne supprimée (ancienne version)
+- Ligne en vert avec `+` : ligne ajoutée (nouvelle version)
+- Ligne sans couleur : ligne inchangée (contexte)
+
+L'en-tête `@@ -x,y +x,y @@` indique à quelle ligne commence le bloc de changements.
+
