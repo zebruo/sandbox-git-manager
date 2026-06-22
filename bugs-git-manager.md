@@ -33,3 +33,32 @@
 **Impact :** déroutant — l'utilisateur ne sait pas lequel modifier ou stager en premier.
 
 **Comportement attendu :** regrouper les deux occurrences en une seule entrée avec un indicateur visuel clair "Conflit à résoudre", puis passer à `M` une fois les marqueurs supprimés et le fichier sauvegardé.
+
+---
+
+## Amélioration UX 2 — Design de la div HEAD détaché
+
+**Symptôme :** la bannière d'avertissement HEAD détaché occupe trop de place dans l'interface.
+
+**Code concerné :** `git-manager.html`, bloc `if (isDetached)` dans la fonction de rendu des branches.
+
+```js
+if (isDetached) {
+  html += `
+    <div class="alert alert-info" style="margin-bottom: 15px;">
+      <i class="fas fa-exclamation-triangle"></i>
+      <strong>HEAD détaché</strong> sur le commit <code>${detachedAt}</code><br>
+      <small>Vous n'êtes sur aucune branche. Basculez sur une branche ou créez-en une depuis ce commit.</small>
+      <div style="margin-top: 10px;">
+        <button class="btn btn-primary" onclick="createBranchFromDetached()" style="padding: 5px 12px; font-size: 0.85em;">
+          <i class="fas fa-code-branch"></i> Créer une branche ici
+        </button>
+      </div>
+    </div>
+  `;
+}
+```
+
+**Impact :** la div prend toute la largeur et pousse le reste du contenu vers le bas.
+
+**Comportement attendu :** revoir le design pour qu'il soit plus compact — bannière fine ou inline, sans perturber la mise en page générale.
