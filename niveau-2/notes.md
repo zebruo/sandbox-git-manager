@@ -1,4 +1,4 @@
-# Niveau 2 — Branches
+# Niveau 2 — Branches GitHub
 
 ## Ce que j'ai pratiqué
 
