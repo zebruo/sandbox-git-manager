@@ -1,4 +1,4 @@
-# Niveau 2 — Branches (version main)
+# Niveau 2 — Branches (version mauin)
 
 ## Ce que j'ai pratiqué
 
