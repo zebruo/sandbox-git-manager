@@ -80,3 +80,25 @@ if (isDetached) {
 **Symptôme :** l'interface affiche l'URL du remote mais pas son nom (`origin`). Pour vérifier le nom, l'utilisateur doit passer par `git remote -v` en ligne de commande.
 
 **Comportement attendu :** afficher le nom du remote (`origin`) à côté de l'URL dans la section de gestion du remote.
+
+---
+
+## Amélioration UX 4 — Distinguer HEAD détaché volontaire et HEAD détaché pendant un rebase
+
+**Symptôme :** git-manager affiche le même message "HEAD détaché" que ce soit lors d'une exploration volontaire d'un ancien commit ou lors d'un `git rebase --continue` (où Git détache temporairement le HEAD en interne).
+
+**Impact :** confusion — l'utilisateur croit être en HEAD détaché accidentellement alors que c'est un état normal et temporaire du rebase.
+
+**Comportement attendu :** détecter si un rebase est en cours (présence de `.git/rebase-merge` ou `.git/rebase-apply`) et afficher un message distinct : "Rebase en cours — HEAD temporairement détaché" au lieu du message habituel.
+
+---
+
+## Amélioration UX 5 — Bouton "Continuer le rebase" dans l'interface
+
+**Symptôme :** quand un rebase est interrompu par un conflit, l'utilisateur doit passer par la ligne de commande pour exécuter `git rebase --continue` (ou `git rebase --abort`).
+
+**Comportement attendu :** détecter la présence de `.git/rebase-merge` ou `.git/rebase-apply` et afficher deux boutons dans l'interface :
+- **Continuer le rebase** → `git rebase --continue` (une fois le conflit résolu et le fichier stagé)
+- **Abandonner le rebase** → `git rebase --abort` (pour revenir à l'état avant le rebase)
+
+Cette amélioration est liée à [[ux4-head-detache-rebase]] — les deux peuvent être implémentées ensemble.
