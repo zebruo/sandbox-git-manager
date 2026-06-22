@@ -2,7 +2,7 @@
 
 ## Ce que j'ai pratiqué
 
-### Créer une branche
+### Créer une branche MAIN
 - Créé la branche `feature-niveau-2` depuis `main`
 - Basculé dessus avec `git checkout -b feature-niveau-2`
 - git-manager n'accepte pas les slashes dans les noms de branche → utiliser des tirets
