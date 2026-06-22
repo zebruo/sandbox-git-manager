@@ -62,3 +62,21 @@ if (isDetached) {
 **Impact :** la div prend toute la largeur et pousse le reste du contenu vers le bas.
 
 **Comportement attendu :** revoir le design pour qu'il soit plus compact — bannière fine ou inline, sans perturber la mise en page générale.
+
+---
+
+## Bug 3 — Branche distante affichée comme `origin` au lieu de `origin/main`
+
+**Symptôme :** dans la section **Branches distantes**, git-manager affiche `origin` au lieu de `origin/main`. Le nom du remote est affiché à la place du nom complet de la branche distante.
+
+**Impact :** trompeur — l'utilisateur croit que la branche s'appelle `origin` alors que c'est le nom du remote. La branche s'appelle `main` des deux côtés, seul le préfixe `origin/` indique qu'elle est distante.
+
+**Comportement attendu :** afficher `origin/main` pour que le lien avec la branche locale `main` soit évident.
+
+---
+
+## Amélioration UX 3 — Afficher le nom du remote dans l'interface
+
+**Symptôme :** l'interface affiche l'URL du remote mais pas son nom (`origin`). Pour vérifier le nom, l'utilisateur doit passer par `git remote -v` en ligne de commande.
+
+**Comportement attendu :** afficher le nom du remote (`origin`) à côté de l'URL dans la section de gestion du remote.
