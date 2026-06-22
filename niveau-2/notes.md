@@ -1,4 +1,4 @@
-# Niveau 2 — Branches (version main)
+# Niveau 2 — Branches (version conflit-test)
 
 ## Ce que j'ai pratiqué
 
