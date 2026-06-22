@@ -1,4 +1,4 @@
-# Niveau 2 — Branches
+# Niveau 2 — Branches conflit test
 
 ## Ce que j'ai pratiqué
 
