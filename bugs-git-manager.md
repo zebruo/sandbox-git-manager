@@ -21,3 +21,15 @@
 **Impact :** la convention `type/nom` (ex: `feature/`, `hotfix/`, `release/`) est très répandue et supportée nativement par Git. git-manager la bloque.
 
 **Contournement :** utiliser un tiret à la place du slash (`feature-niveau-2`).
+
+---
+
+## Amélioration UX 1 — Fichier en double pendant la résolution de conflit
+
+**Symptôme :** lors d'un conflit de fusion, le fichier concerné apparaît deux fois en `M` (Modified) dans la liste des fichiers modifiés.
+
+**Contexte :** comportement observé lors de la résolution d'un conflit sur `niveau-2/notes.md`.
+
+**Impact :** déroutant — l'utilisateur ne sait pas lequel modifier ou stager en premier.
+
+**Comportement attendu :** regrouper les deux occurrences en une seule entrée avec un indicateur visuel clair "Conflit à résoudre", puis passer à `M` une fois les marqueurs supprimés et le fichier sauvegardé.
