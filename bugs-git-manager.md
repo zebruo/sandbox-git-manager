@@ -104,3 +104,15 @@ if (isDetached) {
 - **Abandonner le rebase** → `git rebase --abort` (pour revenir à l'état avant le rebase)
 
 Cette amélioration est liée à [[ux4-head-detache-rebase]] — les deux peuvent être implémentées ensemble.
+
+---
+
+## Bug 4 — Régression Bug 3 : branche distante `origin/main` disparaît après le fix
+
+**Symptôme :** après le fix du Bug 3 (`origin` → `origin/main`), la branche distante `origin/main` n'apparaît plus du tout dans l'interface, même après un Fetch et même quand local et remote ont divergé (commit local non pushé).
+
+**Contexte :** confirmé avec `git branch -r` qui retourne bien `origin/main` — le problème est uniquement dans l'affichage de git-manager.
+
+**Impact :** l'utilisateur ne peut plus voir l'état de synchronisation (↑/↓) avec le remote.
+
+**Cause probable :** le fix du Bug 3 a introduit une régression dans la logique d'affichage des branches distantes.
