@@ -1,6 +1,6 @@
 # Niveau 3 — Synchronisation
 
-## Ce que j'ai pratiqué
+## Ce que j'ai pratiquééé
 
 ### Simuler un travail à deux
 - Modifié un fichier directement sur GitHub via l'interface web
