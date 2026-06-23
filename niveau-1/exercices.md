@@ -1,5 +1,45 @@
 # Niveau 1 — Exercices
 
+## Exercice : Premier commit
+
+**Objectif** : créer le tout premier commit d'un dépôt.
+
+**Étapes :**
+1. Ouvrir git-manager et sélectionner le dépôt
+2. Dans la zone de staging, repérer les fichiers en statut `??` (Untracked)
+3. Cocher `CLAUDE.md` et `.gitignore`
+4. Écrire le message : `Initial commit`
+5. Valider le commit
+
+**Ce qu'on observe :**
+- Statut avant staging : `??` (Untracked)
+- Statut après staging : `A` (Added)
+- `root-commit` dans la sortie → premier commit du dépôt, sans parent
+- Le hash (ex: `d21c8ce`) identifie ce commit de façon unique
+
+---
+
+## Exercice : Modifier un fichier et observer les statuts A et M
+
+**Objectif** : comprendre la zone de staging en observant les statuts en temps réel.
+
+**Étapes :**
+1. Créer un nouveau fichier (ex: `niveau-1/notes.md`)
+2. Observer son statut dans git-manager : `??` (Untracked)
+3. Le stager (`git add` ou bouton Stager) → statut passe à `A`
+4. Modifier le fichier sans le re-stager
+5. Observer : le fichier apparaît en `A` (staging) ET en `M` (working tree) simultanément
+6. Re-stager pour inclure les dernières modifications
+7. Commiter : `feat: add niveau-1 notes`
+
+**Ce qu'on observe :**
+- `??` → fichier inconnu de Git
+- `A` → version stagée, prête pour le commit
+- `M` → modification sur le disque, pas encore stagée
+- Si on commite avec A+M, seule la version A part dans le commit
+
+---
+
 ## Exercice : Lire un diff
 
 **Objectif** : comprendre ce que Git affiche quand un fichier est modifié.

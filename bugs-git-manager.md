@@ -1,6 +1,6 @@
 # Bugs git-manager identifiés
 
-## Bug 1 — Faux avertissement push --force lors d'un amend
+## ~~Bug 1~~ — Faux avertissement push --force lors d'un amend ✓ Corrigé
 
 **Symptôme :** lors d'un amend, git-manager affiche "Ce commit a déjà été pushé sur le remote. Un git push --force sera nécessaire pour l'écraser. Continuer quand même ?" même quand aucun remote n'est configuré.
 
@@ -12,7 +12,7 @@
 
 ---
 
-## Bug 2 — Noms de branche avec slash refusés
+## ~~Bug 2~~ — Noms de branche avec slash refusés ✓ Corrigé
 
 **Symptôme :** git-manager rejette les noms de branche contenant `/` avec le message "Nom de branche invalide. Utilisez uniquement lettres, chiffres, tirets, underscores et points."
 
@@ -65,13 +65,15 @@ if (isDetached) {
 
 ---
 
-## Bug 3 — Branche distante affichée comme `origin` au lieu de `origin/main`
+## ~~Bug 3~~ — Branche distante affichée comme `origin` au lieu de `origin/main` ✓ Corrigé
 
 **Symptôme :** dans la section **Branches distantes**, git-manager affiche `origin` au lieu de `origin/main`. Le nom du remote est affiché à la place du nom complet de la branche distante.
 
 **Impact :** trompeur — l'utilisateur croit que la branche s'appelle `origin` alors que c'est le nom du remote. La branche s'appelle `main` des deux côtés, seul le préfixe `origin/` indique qu'elle est distante.
 
 **Comportement attendu :** afficher `origin/main` pour que le lien avec la branche locale `main` soit évident.
+
+**Cas supplémentaire :** après suppression et remise du remote (`git remote remove origin` puis `git remote add origin <url>`), git-manager affiche deux entrées dans les branches distantes : `origin` (le nom du remote — Bug 3) ET `origin/main` (la vraie branche de suivi créée après le Fetch automatique). Avant la suppression, seul `origin` apparaissait.
 
 ---
 
