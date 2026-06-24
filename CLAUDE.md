@@ -1,4 +1,4 @@
-# SandBox-git-manager à lire !important
+# SandBox-git-manager à lire !important à suivre
 
 Dépôt d'entraînement à Git et à git-manager (interface web de gestion Git — stack PHP/JS vanilla, pas de framework).
 
