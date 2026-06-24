@@ -105,9 +105,11 @@ if (isDetached) {
 
 Cette amélioration est liée à [[ux4-head-detache-rebase]] — les deux peuvent être implémentées ensemble.
 
+**Problème connexe :** après `git rebase --continue`, git-manager tente de supprimer `.git/rebase-merge` et échoue → affiche une invite `y/n` en boucle dans le terminal. Si on répond `y` plusieurs fois, le répertoire reste et VS Code continue d'afficher `main! (rebase en cours)`. Solution manuelle : `Remove-Item -Recurse -Force ".git/rebase-merge"`.
+
 ---
 
-## Bug 4 — Régression Bug 3 : branche distante `origin/main` disparaît après le fix
+## ~~Bug 4~~ — Régression Bug 3 : branche distante `origin/main` disparaît après le fix ✓ Corrigé
 
 **Symptôme :** après le fix du Bug 3 (`origin` → `origin/main`), la branche distante `origin/main` n'apparaît plus du tout dans l'interface, même après un Fetch et même quand local et remote ont divergé (commit local non pushé).
 
@@ -115,4 +117,4 @@ Cette amélioration est liée à [[ux4-head-detache-rebase]] — les deux peuven
 
 **Impact :** l'utilisateur ne peut plus voir l'état de synchronisation (↑/↓) avec le remote.
 
-**Cause probable :** le fix du Bug 3 a introduit une régression dans la logique d'affichage des branches distantes.
+**Cause :** le trim `\r` ajouté pour Bug 3 faisait fonctionner le filtre upstream pour la première fois — `origin/main` était masqué parce qu'il est tracké par la branche locale `main`. Avant le fix, le `\r` résiduel empêchait la comparaison de réussir, donc la branche restait visible par accident. Suppression du filtre upstream : toutes les branches distantes sont maintenant toujours affichées.
