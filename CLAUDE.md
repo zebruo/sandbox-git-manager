@@ -1,6 +1,6 @@
 # SandBox-git-manager
 
-Dépôt d'entraînement à Git et à git-manager (interface web de gestion Git — stack PHP/JS vanilla, pas de framework).
+Dépôt d'entraînement à Git et à git-manager (interface web de gestion Git — stack PHP/JS vanilla, pas de framework). ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
 ## Contexte
 
