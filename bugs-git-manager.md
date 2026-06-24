@@ -24,7 +24,7 @@
 
 ---
 
-## Amélioration UX 1 — Fichier en double pendant la résolution de conflit
+## ~~Amélioration UX 1~~ — Fichier en double pendant la résolution de conflit ✓ Corrigé
 
 **Symptôme :** lors d'un conflit de fusion, le fichier concerné apparaît deux fois en `M` (Modified) dans la liste des fichiers modifiés.
 
