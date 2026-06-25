@@ -1,4 +1,4 @@
-# SandBox-git-manager feature/ajout
+# SandBox-git-manager feature/ajout + modif sans commit
 Dépôt d'entraînement à Git et à git-manager (interface web de gestion Git — stack PHP/JS vanilla, pas de framework).
 
 ## Contexte
